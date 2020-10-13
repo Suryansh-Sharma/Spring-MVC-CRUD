@@ -44,8 +44,14 @@ public class CustomerController {
 
 //    POST request to /customer persists the customer
     @RequestMapping(value = "/customer", method = RequestMethod.POST)
-    public String saveOrUpdateCustomer(Customer customer) {
+    public String addCustomer(Customer customer) {
         Customer savedCustomer = customerService.addOrUpdateCustomer(customer);
         return "redirect:/customer/" + savedCustomer.getId();
+    }
+
+    @RequestMapping("/customer/edit/{id}")
+    public String updateCustomer(@PathVariable Integer id, Model model) {
+        model.addAttribute("customer", customerService.getCustomerById(id));
+        return "customerForm";
     }
 }
