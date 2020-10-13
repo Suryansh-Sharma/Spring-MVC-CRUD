@@ -31,8 +31,11 @@
                 <td th:text="${customer.city}"></td>
                 <td th:text="${customer.state}"></td>
                 <td th:text="${customer.zipCode}"></td>
+                <td><a th:href="${'/customer/edit/' + customer.id}">Edit</a></td>
+                <td><a th:href="${'/customer/delete/' + customer.id}">Delete</a></td>
             </tr>
         </table>
+        <a th:href="@{/customer/new}">Add a customer</a>
     </div>
 </body>
 </html>
