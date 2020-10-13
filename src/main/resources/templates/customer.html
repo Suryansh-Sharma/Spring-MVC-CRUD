@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}">
+
+    <title>Customer</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Customer</h2>
+    <!-- This is going to be a vertical table -->
+        <table class="table table-striped">
+            <tr>
+                <td>First name</td>
+                <td th:text="${customer.firstName}"></td>
+            </tr>
+            <tr>
+                <td>Last name</td>
+                <td th:text="${customer.lastName}"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td th:text="${customer.email}"></td>
+            </tr>
+            <tr>
+                <td>Address line one</td>
+                <td th:text="${customer.addressLineOne}"></td>
+            </tr>
+            <tr>
+                <td>Address line two</td>
+                <td th:text="${customer.addressLineTwo}"></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td th:text="${customer.city}"></td>
+            </tr>
+            <tr>
+                <td>State</td>
+                <td th:text="${customer.state}"></td>
+            </tr>
+            <tr>
+                <td>Zip code</td>
+                <td th:text="${customer.zipCode}"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
