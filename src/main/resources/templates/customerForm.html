@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}">
+
+    <title>Customer Form</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Save a customer</h2>
+<!--        Form to add or update a customer -->
+        <form method="post" th:object="${customer}" th:action="@{/customer}">
+            <input class="form-control" type="hidden" th:field="*{id}" />
+            <label>First name</label>
+            <input class="form-control" type="text" th:field="*{firstName}" />
+            <label>Last name</label>
+            <input class="form-control" type="text" th:field="*{lastName}" />
+            <label>Email</label>
+            <input class="form-control" type="text" th:field="*{email}" />
+            <label>Address Line 1</label>
+            <input class="form-control" type="text" th:field="*{addressLineOne}" />
+            <label>Address Line 2</label>
+            <input class="form-control" type="text" th:field="*{addressLineTwo}" />
+            <label>City</label>
+            <input class="form-control" type="text" th:field="*{city}" />
+            <label>State</label>
+            <input class="form-control" type="text" th:field="*{state}" />
+            <label>Zip Code</label>
+            <input class="form-control" type="text" th:field="*{zipCode}" />
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
